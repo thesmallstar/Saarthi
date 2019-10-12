@@ -1,0 +1,24 @@
+[
+    {
+        "_id": "5d93983104e3b91fe0f67fc8",
+        "__v": 0,
+        "price": 50,
+        "lang": "73.855999",
+        "lat": "18.520482",
+        "phone": "2839238",n
+        "userId": "",
+        "timing": "2-5",
+        "name": "ABCD PARKING"
+    },
+    {
+        "_id": "5d93985804e3b91fe0f67fc9",
+        "__v": 0,
+        "price": 100,
+        "lang": "73.85618359999999",
+        "lat": "18.5201051",
+        "phone": "fgdfg",
+        "userId": "",
+        "timing": "6-7",
+        "name": "PALAK MITTAL"
+    }
+]

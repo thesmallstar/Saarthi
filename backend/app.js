@@ -13,4 +13,9 @@ app.use("/api/users", UserController);
 var AuthController = require(__root + "auth/AuthController");
 app.use("/api/auth", AuthController);
 
+var PathController = require(__root + "path/PathController");
+app.use("/api/path", PathController);
+
+var ParkingController = require(__root + "parking/ParkingController");
+app.use("/api/parking", ParkingController);
 module.exports = app;

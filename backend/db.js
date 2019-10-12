@@ -1,4 +1,4 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/Sarthi", {
+mongoose.connect("mongodb://localhost:27017/Saarthi", {
   useMongoClient: true
 });

@@ -18,13 +18,10 @@ var config = require("../config"); // get config file
 router.post("/login", function(req, res) {
   User.findOne({ phone: req.body.phone }, function(err, user) {
     if (err) return res.status(500).send("Error on the server.");
-    if (!user) return res.status(404).send("No user found.");
+    if (!user) return res.status(404).send({ auth: false, token: null });
 
     // check if the password is valid
     var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
-    console.log(passwordIsValid);
-    console.log(user.password);
-    console.log(req.body.password);
 
     if (!passwordIsValid)
       return res.status(401).send({ auth: false, token: null });

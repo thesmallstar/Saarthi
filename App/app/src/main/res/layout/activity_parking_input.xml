@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".parkingInput">
+
+    <EditText
+        android:id="@+id/inputparrkingtime"
+        android:layout_width="273dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="84dp"
+        android:ems="10"
+        android:hint="Timing Information"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputparkingprice" />
+
+    <EditText
+        android:id="@+id/inputparkingname"
+        android:layout_width="273dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Parking Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputparkingprice"
+        android:layout_width="273dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Price per hour"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputparkingname" />
+
+    <Button
+        android:id="@+id/parkingSubmit"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="239dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="28dp"
+        android:text="Register Parking Spot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/inputparklingheavy"
+        android:layout_width="143dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="38dp"
+        android:text="Heavy Vehicles"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputparkingins" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/inputparkingswitch"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <Switch
+        android:id="@+id/inputparkingswitch"
+        android:layout_width="193dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="38dp"
+        android:text="Use my current location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.319"
+        app:layout_constraintStart_toEndOf="@+id/inputparklingheavy"
+        app:layout_constraintTop_toBottomOf="@+id/inputparkingins" />
+
+    <EditText
+        android:id="@+id/inputparkingnumber"
+        android:layout_width="273dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Contact Number"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputparrkingtime" />
+
+    <EditText
+        android:id="@+id/inputparkingins"
+        android:layout_width="273dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Instructions(if any)"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputparkingnumber" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

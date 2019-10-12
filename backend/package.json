@@ -11,10 +11,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google/maps": "^1.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.16.1",
-    "express": "^4.14.1",
+    "express": "^4.17.1",
+    "geolib": "^3.0.4",
     "jsonwebtoken": "^7.4.1",
-    "mongoose": "^4.8.5"
+    "mathjs": "^6.2.2",
+    "mongoose": "^4.13.19",
+    "node-kmeans": "^1.1.9",
+    "utm": "^1.1.1"
   }
 }

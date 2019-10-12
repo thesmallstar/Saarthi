@@ -5,35 +5,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#724eeb"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/takeMeToRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="216dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="30dp"
         android:onClick="sendReg"
         android:text="Register"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#724EEB"
+        android:background="#F0FFF1"
+        app:layout_constraintBottom_toTopOf="@+id/takeMetoLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/takeMetoLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="150dp"
         android:onClick="sendLogin"
         android:text="Login"
+        android:textColor="#724EEB"
+        android:background="#F0FFF1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -43,18 +47,21 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="133dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Saarthi "
+        android:layout_width="276dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="100dp"
+        android:text="Hi, I am Saarthi "
         android:textAlignment="center"
-        android:textSize="20dp"
+        android:textColor="#f0fff1"
+        android:textSize="35dp"
         app:layout_constraintBottom_toTopOf="@+id/takeMeToRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.669" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.saarthi;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,7 +14,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.orhanobut.hawk.Hawk;
+
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
@@ -36,21 +40,17 @@ public class Register extends AppCompatActivity {
     //used to test only :)
     private TextView test;
     private String server;
-
-  Register(){
-
-
-  }
-
    private EditText name,phone,password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         setContentView(R.layout.activity_register);
         Intent intent = getIntent();
         test = (TextView) findViewById(R.id.test);
-        server =  getString(R.string.server);
+        server =   getResources().getString(R.string.server);;
         name = findViewById(R.id.regName);
         phone = findViewById(R.id.regPhone);
         password = findViewById(R.id.regPass);
@@ -173,8 +173,10 @@ public class Register extends AppCompatActivity {
                                   @Override
                                   public void run() {
                                       try {
-                                          changeText(response.body().string());
+                                          handleRegister(response.body().string());
                                       } catch (IOException e) {
+                                          e.printStackTrace();
+                                      } catch (JSONException e) {
                                           e.printStackTrace();
                                       }
                                   }
@@ -196,11 +198,42 @@ public class Register extends AppCompatActivity {
 
 
 
-void changeText(String s){
+void handleRegister(String r) throws JSONException {
+    JSONObject ress = new JSONObject(r);
 
-        test.setText("Successfully Registered");
+    final String tokenn = (String) ress.get("token").toString();
+    final String auth = (String) ress.get("auth").toString();
+    if(auth.equals("true")){
+
+
+        Hawk.init(getApplicationContext()).build();
+        Hawk.put("token",tokenn);
+        //String s = Hawk.get("token");
+        test.setText("Sucessfully Registered");
+        checkIfUserloggedin();
+
+
+
+    }else{
+        test.setText("Could not register");
+    }
+
+
 
 }
+
+    private void checkIfUserloggedin(){
+        Hawk.init(getApplicationContext()).build();
+        if(Hawk.contains("token")){
+            Intent intent = new Intent(this, home.class);
+
+            startActivity(intent);
+            finishAffinity();
+
+        }
+
+
+    }
 
   private void runInBackround(){
         server =  getString(R.string.server)+"auth/register";
@@ -246,7 +279,7 @@ void changeText(String s){
             // Response node is JSON Object
             JSONObject ress = new JSONObject(responseString);
            final String tokenn = (String) ress.get("token");
-            final String auth = (String) ress.get("auth");
+           final String auth = (String) ress.get("auth");
             //final String auth = res.getJSONArray("added").getJSONObject(0).getString("response");
 
 
@@ -257,15 +290,14 @@ void changeText(String s){
                     if(auth.equals("true")){
                         //display in short period of time
                         test.setText("herse");
-                        Toast.makeText(getApplicationContext(), "Booking Successful", Toast.LENGTH_LONG).show();
+                      //  Toast.makeText(getApplicationContext(), "Booking Successful", Toast.LENGTH_LONG).show();
                     }else{
                         //display in short period of time
                         test.setText("here");
-                        Toast.makeText(getApplicationContext(), "Booking Not Successful", Toast.LENGTH_LONG).show();
+                       // Toast.makeText(getApplicationContext(), "Booking Not Successful", Toast.LENGTH_LONG).show();
                     }
                 }
             });
-
         } catch (MalformedURLException e) {
             //Log.e(TAG, "MalformedURLException: " + e.getMessage());
         } catch (ProtocolException e) {

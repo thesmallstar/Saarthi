@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/padd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".path">
+
+    <EditText
+        android:id="@+id/editSrc"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/edittextbackground"
+        android:ems="10"
+        android:hint="Enter origin"
+        android:inputType="textPersonName"
+        android:outlineProvider="background"
+        android:paddingLeft="14dp"
+        android:shadowColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editDst"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edittextbackground"
+        android:ems="10"
+        android:hint="Enter destination"
+        android:inputType="textPersonName"
+        android:paddingLeft="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editSrc" />
+
+    <Button
+        android:id="@+id/postbutton"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:onClick="onClickpostButton"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:text="Get Path"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1"
+        app:layout_constraintVertical_bias="0.106" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/borderColor" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        style="@android:style/Widget.DeviceDefault.Light.Spinner"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/borderColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDst" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1"
+        app:layout_constraintVertical_bias="0.193" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
