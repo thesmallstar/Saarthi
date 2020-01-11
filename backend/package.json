@@ -18,7 +18,7 @@
     "geolib": "^3.0.4",
     "jsonwebtoken": "^7.4.1",
     "mathjs": "^6.2.2",
-    "mongoose": "^4.13.19",
+    "mongoose": "^5.7.5",
     "node-kmeans": "^1.1.9",
     "utm": "^1.1.1"
   }
